@@ -16,11 +16,12 @@ object EndPoint {
             .toString()
     }
 
-    fun getMovies(): String {
+    fun getMovies(genreId: String?): String {
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("3")
+            .appendPath("discover")
             .appendPath("movie")
-            .appendPath("popular")
+            .appendQueryParameter("with_genres", genreId)
             .appendQueryParameter("api_key", BuildConfig.TMDB_API_KEY)
             .build()
             .toString()
