@@ -1,7 +1,10 @@
 package com.iqbalproject.mymovieshow.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Movies (
     @SerializedName("id")
     val movieId: String? = null,
@@ -20,4 +23,4 @@ data class Movies (
 
     @SerializedName("genre_ids")
     val movieGenre: List<String>
-)
+) : Parcelable

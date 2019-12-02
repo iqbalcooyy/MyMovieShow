@@ -64,7 +64,8 @@ class MainActivity : AppCompatActivity(), GenresView, MoviesView {
 
         gvMovies.onItemClickListener = object : AdapterView.OnItemClickListener {
             override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                startActivity<DetailActivity>()
+                startActivity<DetailActivity>("movie" to movies.get(position))
+                Log.d("MOVIE_CLICK", movies.get(position).toString())
             }
 
         }
