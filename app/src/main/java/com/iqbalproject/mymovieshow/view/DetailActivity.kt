@@ -31,6 +31,11 @@ class DetailActivity : AppCompatActivity() {
                     detailFragment = OverviewFragment()
                     detailFragment.arguments = data
                 }
+                review -> {
+                    data.putString("movieId", movie.movieId)
+                    detailFragment = ReviewFragment()
+                    detailFragment.arguments = data
+                }
             }
 
             supportFragmentManager

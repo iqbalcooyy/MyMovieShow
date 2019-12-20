@@ -37,4 +37,15 @@ object EndPoint {
             .build()
             .toString()
     }
+
+    fun getReviewsMovie(movieId: String?): String {
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+            .appendPath("3")
+            .appendPath("movie")
+            .appendPath("${movieId}")
+            .appendPath("reviews")
+            .appendQueryParameter("api_key", BuildConfig.TMDB_API_KEY)
+            .build()
+            .toString()
+    }
 }
