@@ -5,24 +5,13 @@
                 android:padding="10dp">
 
     <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Title"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-    />
-
-    <TextView
             android:id="@+id/tvAuthor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTitle"
             android:text="Written by. Author"
             android:textStyle="italic"
             android:textColor="@android:color/black"
-            android:textSize="15sp"
+            android:textSize="20sp"
     />
 
     <TextView
@@ -32,7 +21,7 @@
             android:layout_below="@+id/tvAuthor"
             android:text="Comments"
             android:layout_marginTop="10dp"
-            android:textSize="12sp"
+            android:textSize="13sp"
     />
 
 </RelativeLayout>

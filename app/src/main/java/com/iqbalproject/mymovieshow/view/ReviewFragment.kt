@@ -52,13 +52,12 @@ class ReviewFragment : Fragment(), ReviewsView {
         val request = ApiRepository()
         val gson = Gson()
         presenter = ReviewsPresenter(this,request, gson)
-        presenter.getReviewsMovie(movieId)
+        presenter.getReviewsMovie(this.requireContext(), movieId)
     }
 
     override fun showReviewList(data: List<Review>) {
         reviews.clear()
         reviews.addAll(data)
         adapter.notifyDataSetChanged()
-        Log.d("REVIEWS", data.toString())
     }
 }

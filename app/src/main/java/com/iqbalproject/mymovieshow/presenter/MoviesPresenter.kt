@@ -1,5 +1,6 @@
 package com.iqbalproject.mymovieshow.presenter
 
+import android.util.Log
 import com.google.gson.Gson
 import com.iqbalproject.mymovieshow.model.MovieList
 import com.iqbalproject.mymovieshow.utils.ApiRepository
@@ -18,6 +19,8 @@ class MoviesPresenter(private val view: MoviesView,
                 apiRepository.doRequest(EndPoint.getMovies(genreId)).await(),
                 MovieList::class.java
             )
+
+            Log.d("MOVIE_LIST", data.results.toString())
 
             view.showMovieList(data.results)
         }

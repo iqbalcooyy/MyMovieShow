@@ -17,6 +17,7 @@ import com.iqbalproject.mymovieshow.presenter.TrailerPresenter
 import com.iqbalproject.mymovieshow.presenter.TrailerView
 import com.iqbalproject.mymovieshow.utils.ApiRepository
 import kotlinx.android.synthetic.main.fragment_overview.*
+import org.jetbrains.anko.support.v4.toast
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -71,8 +72,14 @@ class OverviewFragment : Fragment(), YouTubePlayer.OnInitializedListener, Traile
         player: YouTubePlayer?,
         wasRestored: Boolean
     ) {
-        if (!wasRestored) {
-            player?.cueVideo(trailerMovie.last().videoKey)
+
+        try {
+            if (!wasRestored) {
+                player?.cueVideo(trailerMovie.last().videoKey)
+            }
+        } catch (e: RuntimeException) {
+            toast("Trailer isn't Available").show()
+            player?.release()
         }
     }
 

@@ -57,7 +57,6 @@ class MainActivity : AppCompatActivity(), GenresView, MoviesView {
                 val genId = spinnerGenre.selectedItem.toString().split("_")
                 genreId = genId.get(1)
                 presenterMovie.getMovieList(genreId)
-                Log.d("GENRE_ID", genreId)
             }
 
         }
@@ -74,7 +73,6 @@ class MainActivity : AppCompatActivity(), GenresView, MoviesView {
     override fun showGenreList(data: List<Genres>) {
         genres.clear()
         genres.addAll(data)
-        Log.d("GENRE_LIST", data.toString())
 
         for (i in data.indices) {
             genre.add(i, data.get(i).genreName.toString() + "_" + data.get(i).genreId.toString())
@@ -87,6 +85,5 @@ class MainActivity : AppCompatActivity(), GenresView, MoviesView {
         movies.clear()
         movies.addAll(data)
         adapterMovie.notifyDataSetChanged()
-        Log.d("MOVIE_LIST", data.toString())
     }
 }
